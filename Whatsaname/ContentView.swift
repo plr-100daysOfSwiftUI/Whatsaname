@@ -8,14 +8,47 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        Text("Hello, world!")
-            .padding()
-    }
+	
+	@State private var image: Image?
+	@State private var name: String = ""
+	
+	var body: some View {
+		
+		NavigationView {
+			VStack {
+				ZStack {
+					Rectangle()
+						.fill(Color.secondary)
+					
+					if image != nil {
+						image?
+							.resizable()
+							.scaledToFit()
+					} else {
+						Text("Tap to select a picture")
+							.foregroundColor(.white)
+							.font(.headline)
+					}
+				}
+				HStack {
+					TextField("Name", text: $name)
+				}
+				HStack {
+					Spacer()
+					Button("Save") {
+						// save the data
+					}
+				}
+			}
+			.padding([.horizontal, .bottom])
+			.navigationBarTitle("Whatsaname")
+		}
+
+	}
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+	static var previews: some View {
+		ContentView()
+	}
 }
