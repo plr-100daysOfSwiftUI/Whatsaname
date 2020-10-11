@@ -13,6 +13,7 @@ struct ContentView: View {
 	@State private var name: String = ""
 	
 	@State private var showingImagePicker = false
+	@State private var inputImage: UIImage?
 	
 	var body: some View {
 		
@@ -49,7 +50,7 @@ struct ContentView: View {
 			.padding([.horizontal, .bottom])
 			.navigationBarTitle("Whatsaname")
 			.sheet(isPresented: $showingImagePicker) {
-				 ImagePicker()
+				ImagePicker(image: $inputImage)
 			}
 		}
 
