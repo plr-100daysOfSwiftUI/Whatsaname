@@ -12,6 +12,8 @@ struct ContentView: View {
 	@State private var image: Image?
 	@State private var name: String = ""
 	
+	@State private var showingImagePicker = false
+	
 	var body: some View {
 		
 		NavigationView {
@@ -30,6 +32,10 @@ struct ContentView: View {
 							.font(.headline)
 					}
 				}
+				.onTapGesture {
+					// select an image
+					self.showingImagePicker = true
+				}
 				HStack {
 					TextField("Name", text: $name)
 				}
@@ -42,6 +48,9 @@ struct ContentView: View {
 			}
 			.padding([.horizontal, .bottom])
 			.navigationBarTitle("Whatsaname")
+			.sheet(isPresented: $showingImagePicker) {
+				 ImagePicker()
+			}
 		}
 
 	}
