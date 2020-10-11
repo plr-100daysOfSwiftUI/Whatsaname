@@ -9,13 +9,25 @@ import UIKit
 
 class ImageSaver: NSObject {
 	
-	var successHandler: (() -> Void)?
-	var errorHandler: ((Error) -> Void)?
+	func writetoJSON(image: UIImage, firstName: String, lastName: String) {
+		
+		let contact = Contact(firstName: firstName, lastName: lastName)
+		let imageUrl = self.getDocumentsDirectory().appendingPathComponent("\(contact.id).jpeg")
+		
+		do {
+			if let jpegData = image.jpegData(compressionQuality: 0.8) {
+				try jpegData.write(to: imageUrl, options: [.atomicWrite, .completeFileProtection])
+				print("Image saved.")
+			}
+		} catch {
+			print(error.localizedDescription)
+		}
+		
+	}
 	
-	func writetoJSON(image: UIImage) {
-		
-		
-		
+	func getDocumentsDirectory() -> URL {
+		let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+		return paths[0]
 	}
 	
 }
