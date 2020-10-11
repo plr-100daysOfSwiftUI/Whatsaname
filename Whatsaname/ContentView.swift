@@ -54,11 +54,16 @@ struct ContentView: View {
 			}
 			.padding([.horizontal, .bottom])
 			.navigationBarTitle("Whatsaname")
-			.sheet(isPresented: $showingImagePicker) {
+			.sheet(isPresented: $showingImagePicker, onDismiss: (loadImage)) {
 				ImagePicker(image: $inputImage)
 			}
 		}
 
+	}
+	
+	func loadImage() {
+		guard let inputImage = inputImage else { return }
+		image = Image(uiImage: inputImage)
 	}
 }
 
