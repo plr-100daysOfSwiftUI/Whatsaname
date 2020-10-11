@@ -49,8 +49,8 @@ struct ContentView: View {
 						guard !firstName.isEmpty && !lastName.isEmpty else { return }
 						
 						// save the data
-						let imageSaver = ImageSaver()
-						imageSaver.writetoJSON(image: inputImage!, firstName: firstName, lastName: lastName)
+						let contactSaver = ContactSaver()
+						contactSaver.saveContact(image: inputImage!, firstName: firstName, lastName: lastName)
 					}
 				}
 			}

@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct Contact: Identifiable, Comparable {
+struct Contact: Identifiable, Comparable, Codable {
 	
-	let id = UUID()
+	let id: UUID
 	let firstName: String
 	let lastName: String
 	
