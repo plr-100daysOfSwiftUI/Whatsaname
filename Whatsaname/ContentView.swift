@@ -10,7 +10,8 @@ import SwiftUI
 struct ContentView: View {
 	
 	@State private var image: Image?
-	@State private var name: String = ""
+	@State private var firstName: String = ""
+	@State private var lastName: String = ""
 	
 	@State private var showingImagePicker = false
 	@State private var inputImage: UIImage?
@@ -37,12 +38,16 @@ struct ContentView: View {
 					// select an image
 					self.showingImagePicker = true
 				}
-				HStack {
-					TextField("Name", text: $name)
+				VStack {
+					TextField("First Name", text: $firstName)
+					TextField("Last Name", text: $lastName)
 				}
 				HStack {
 					Spacer()
 					Button("Save") {
+						guard let _ = self.image else { return }
+						guard !firstName.isEmpty && !lastName.isEmpty else { return }
+						
 						// save the data
 					}
 				}
