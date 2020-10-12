@@ -12,11 +12,11 @@ struct ListView: View {
 	var contacts: [Contact]
 	
 	var body: some View {
-		List(contacts) { contact in
+		List(contacts.sorted()) { contact in
 			NavigationLink(
 				destination: DetailView(contact: contact, imageUrl: ContactSaver.getDocumentsDirectory().appendingPathComponent("\(contact.id).jpeg"))) {
-				Text("\(contact.firstName)")
-				Text("\(contact.lastName)")
+				Text("\(contact.lastName), \(contact.firstName)")
+
 			}
 		}
 	}
