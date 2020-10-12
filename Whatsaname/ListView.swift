@@ -14,7 +14,7 @@ struct ListView: View {
 	var body: some View {
 		List(contacts) { contact in
 			NavigationLink(
-				destination: DetailView(contact: contact)) {
+				destination: DetailView(contact: contact, imageUrl: ContactSaver.getDocumentsDirectory().appendingPathComponent("\(contact.id).jpeg"))) {
 				Text("\(contact.firstName)")
 				Text("\(contact.lastName)")
 			}

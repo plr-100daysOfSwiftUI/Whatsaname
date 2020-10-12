@@ -10,9 +10,21 @@ import SwiftUI
 struct DetailView: View {
 	
 	var contact: Contact
+	var imageUrl: URL
+	var uiImage: UIImage? {
+		guard let data = try? Data(contentsOf: imageUrl) else { return nil }
+		guard let uiImage = UIImage(data: data) else { return nil }
+		return uiImage
+	}
 	
 	var body: some View {
-		Text("\(contact.firstName) \(contact.lastName)")
+		VStack {
+			Image(uiImage: uiImage!)
+				.resizable()
+				.scaledToFit()
+			Text("\(contact.firstName) \(contact.lastName)")
+		}
+		.padding()
 	}
 }
 
