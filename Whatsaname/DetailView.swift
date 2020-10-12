@@ -16,9 +16,9 @@ struct DetailView: View {
 	}
 }
 
-struct DetailView_Previews: PreviewProvider {
-	static var previews: some View {
-		let contact = Contact(id: UUID(), firstName: "Foo", lastName: "Bar")
-		DetailView(contact: contact)
-	}
-}
+//struct DetailView_Previews: PreviewProvider {
+//	static var previews: some View {
+//		let contact = Contact(id: UUID(), firstName: "Foo", lastName: "Bar")
+//		DetailView(contact: contact, imageUrl: )
+//	}
+//}
