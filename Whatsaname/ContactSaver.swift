@@ -16,7 +16,7 @@ class ContactSaver: NSObject {
 	}
 	
 	func writeToJSON (_ contact: Contact) {
-		let url = self.getDocumentsDirectory().appendingPathComponent("contacts.json")
+		let url = Self.getDocumentsDirectory().appendingPathComponent("contacts.json")
 		
 		// initialise contacts
 		var contacts = [Contact]()
@@ -36,7 +36,7 @@ class ContactSaver: NSObject {
 	
 	func saveImage (image: UIImage, id: UUID) {
 		
-		let imageUrl = self.getDocumentsDirectory().appendingPathComponent("\(id).jpeg")
+		let imageUrl = Self.getDocumentsDirectory().appendingPathComponent("\(id).jpeg")
 		
 		// save image
 		do {
@@ -50,7 +50,21 @@ class ContactSaver: NSObject {
 		
 	}
 	
-	func getDocumentsDirectory() -> URL {
+	static func decodeContacts() -> [Contact] {
+		let url = self.getDocumentsDirectory().appendingPathComponent("contacts.json")
+		
+		// initialise contacts
+		var contacts = [Contact]()
+		
+		
+		if let decoded = try? Data(contentsOf: url) {
+			contacts = try! JSONDecoder().decode([Contact].self, from: decoded)
+		}
+		
+		return contacts
+	}
+	
+	static func getDocumentsDirectory() -> URL {
 		let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
 		return paths[0]
 	}

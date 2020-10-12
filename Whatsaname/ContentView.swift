@@ -15,6 +15,7 @@ struct ContentView: View {
 	
 	@State private var showingImagePicker = false
 	@State private var inputImage: UIImage?
+	@State private var contacts: [Contact] = ContactSaver.decodeContacts()
 	
 	var body: some View {
 		
@@ -56,17 +57,24 @@ struct ContentView: View {
 			}
 			.padding([.horizontal, .bottom])
 			.navigationBarTitle("Whatsaname")
+			.navigationBarItems(trailing: NavigationLink(
+														destination: ListView(contacts: contacts),
+														label: {
+															Image(systemName: "list.dash")
+														})
+			)
 			.sheet(isPresented: $showingImagePicker, onDismiss: (loadImage)) {
 				ImagePicker(image: $inputImage)
 			}
 		}
-
+		
 	}
 	
 	func loadImage() {
 		guard let inputImage = inputImage else { return }
 		image = Image(uiImage: inputImage)
 	}
+	
 }
 
 struct ContentView_Previews: PreviewProvider {

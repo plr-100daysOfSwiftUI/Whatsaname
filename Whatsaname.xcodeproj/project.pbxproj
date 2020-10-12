@@ -17,6 +17,8 @@
 		8B0D0C87253303AB00A15FBA /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0D0C86253303AB00A15FBA /* ImagePicker.swift */; };
 		8B0D0C8B25330C5000A15FBA /* ContactSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0D0C8A25330C5000A15FBA /* ContactSaver.swift */; };
 		8B0D0C8E25330EE900A15FBA /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0D0C8D25330EE900A15FBA /* Contact.swift */; };
+		8BB48DF22534429F005CF296 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB48DF12534429F005CF296 /* ListView.swift */; };
+		8BB48DF72534493C005CF296 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB48DF62534493C005CF296 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		8B0D0C86253303AB00A15FBA /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		8B0D0C8A25330C5000A15FBA /* ContactSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactSaver.swift; sourceTree = "<group>"; };
 		8B0D0C8D25330EE900A15FBA /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		8BB48DF12534429F005CF296 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		8BB48DF62534493C005CF296 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,14 +71,16 @@
 			children = (
 				8B0D0C7B2532FDF100A15FBA /* Info.plist */,
 				8B0D0C6D2532FDEF00A15FBA /* AppDelegate.swift */,
+				8B0D0C8D25330EE900A15FBA /* Contact.swift */,
+				8B0D0C8A25330C5000A15FBA /* ContactSaver.swift */,
 				8B0D0C712532FDEF00A15FBA /* ContentView.swift */,
+				8BB48DF62534493C005CF296 /* DetailView.swift */,
 				8B0D0C86253303AB00A15FBA /* ImagePicker.swift */,
+				8BB48DF12534429F005CF296 /* ListView.swift */,
 				8B0D0C6F2532FDEF00A15FBA /* SceneDelegate.swift */,
 				8B0D0C732532FDF100A15FBA /* Assets.xcassets */,
 				8B0D0C782532FDF100A15FBA /* LaunchScreen.storyboard */,
 				8B0D0C752532FDF100A15FBA /* Preview Content */,
-				8B0D0C8A25330C5000A15FBA /* ContactSaver.swift */,
-				8B0D0C8D25330EE900A15FBA /* Contact.swift */,
 			);
 			path = Whatsaname;
 			sourceTree = "<group>";
@@ -159,8 +165,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B0D0C8E25330EE900A15FBA /* Contact.swift in Sources */,
+				8BB48DF72534493C005CF296 /* DetailView.swift in Sources */,
 				8B0D0C6E2532FDEF00A15FBA /* AppDelegate.swift in Sources */,
 				8B0D0C87253303AB00A15FBA /* ImagePicker.swift in Sources */,
+				8BB48DF22534429F005CF296 /* ListView.swift in Sources */,
 				8B0D0C8B25330C5000A15FBA /* ContactSaver.swift in Sources */,
 				8B0D0C702532FDEF00A15FBA /* SceneDelegate.swift in Sources */,
 				8B0D0C722532FDEF00A15FBA /* ContentView.swift in Sources */,
