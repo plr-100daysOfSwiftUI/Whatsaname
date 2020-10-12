@@ -13,8 +13,11 @@ struct ListView: View {
 	
 	var body: some View {
 		List(contacts) { contact in
-			Text("\(contact.firstName)")
-			Text("\(contact.lastName)")
+			NavigationLink(
+				destination: DetailView(contact: contact)) {
+				Text("\(contact.firstName)")
+				Text("\(contact.lastName)")
+			}
 		}
 	}
 	

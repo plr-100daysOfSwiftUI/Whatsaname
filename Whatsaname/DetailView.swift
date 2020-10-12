@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct DetailView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+	
+	var contact: Contact
+	
+	var body: some View {
+		Text("\(contact.firstName) \(contact.lastName)")
+	}
 }
 
 struct DetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        DetailView()
-    }
+	static var previews: some View {
+		let contact = Contact(id: UUID(), firstName: "Foo", lastName: "Bar")
+		DetailView(contact: contact)
+	}
 }
