@@ -1,5 +1,5 @@
 # Whatsaname
-[100 Days of SwiftUI - Day 77: Challenge](https://www.hackingwithswift.com/guide/ios-swiftui/6/3/challenge)
+[100 Days of SwiftUI - Day 77: Challenge](https://www.hackingwithswift.com/guide/ios-swiftui/6/3/challenge)  
 [100 Days of SwiftUI - Day 78: Challenge](https://www.hackingwithswift.com/100/swiftui/78)
 
 Have you ever been to a conference or a meetup, chatted to someone new, then realized seconds after you walk away that you’ve already forgotten their name? You’re not alone, and this app will help solve that problem and others like it.
