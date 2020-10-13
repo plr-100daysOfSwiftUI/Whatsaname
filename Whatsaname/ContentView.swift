@@ -58,6 +58,7 @@ struct ContentView: View {
 					TextField("Last Name", text: $lastName)
 					TextField("Location", text: $locationName)
 				}
+				.textFieldStyle(RoundedBorderTextFieldStyle())
 				HStack {
 					Spacer()
 					Button("Save") {
