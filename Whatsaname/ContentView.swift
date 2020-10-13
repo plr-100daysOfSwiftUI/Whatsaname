@@ -17,6 +17,10 @@ struct ContentView: View {
 	@State private var showingImagePicker = false
 	@State private var inputImage: UIImage?
 	
+	/*
+	TODO: the contacts array must be updated after saving
+	*/
+	
 	var contacts: [Contact] {
 		ContactSaver.decodeContacts()
 	}
