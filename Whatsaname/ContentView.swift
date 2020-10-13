@@ -39,7 +39,8 @@ struct ContentView: View {
 					if image != nil {
 						image?
 							.resizable()
-							.scaledToFit()
+							.aspectRatio(inputImage!.size, contentMode: .fit)
+						//							.scaledToFit()
 					} else {
 						Text("Tap to select a picture")
 							.foregroundColor(.white)

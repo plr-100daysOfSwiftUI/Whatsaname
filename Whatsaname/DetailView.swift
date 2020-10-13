@@ -16,12 +16,17 @@ struct DetailView: View {
 		guard let uiImage = UIImage(data: data) else { return nil }
 		return uiImage
 	}
-	
+		
 	var body: some View {
 		VStack {
 			Image(uiImage: uiImage!)
 				.resizable()
-				.scaledToFit()
+				/*
+					.scaledToFit()
+				This is buggy
+				[Link](https://www.hackingwithswift.com/forums/100-days-of-swiftui/day-77-images-on-real-iphone-are-distorted/938)
+				*/
+				.aspectRatio(uiImage!.size, contentMode: .fit)
 			NavigationLink(destination: MapView(latitude: contact.latitude, longitude: contact.longitude, locationName: contact.locationName)) {
 				Text("Made contact at \(contact.locationName)")
 			}
