@@ -6,11 +6,12 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ContactSaver: NSObject {
 	
-	func saveContact(image: UIImage, firstName: String, lastName: String) {
-		let contact = Contact(id: UUID(), firstName: firstName, lastName: lastName)
+	func saveContact(image: UIImage, firstName: String, lastName: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
+		let contact = Contact(id: UUID(), firstName: firstName, lastName: lastName, latitude: latitude, longitude: longitude)
 		writeToJSON(contact)
 		saveImage(image: image, id: contact.id)
 	}

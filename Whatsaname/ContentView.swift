@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 struct ContentView: View {
 	
@@ -15,7 +16,12 @@ struct ContentView: View {
 	
 	@State private var showingImagePicker = false
 	@State private var inputImage: UIImage?
-	@State private var contacts: [Contact] = ContactSaver.decodeContacts()
+	
+	var contacts: [Contact] {
+		ContactSaver.decodeContacts()
+	}
+		
+	let locationFetcher = LocationFetcher()
 	
 	var body: some View {
 		
@@ -36,6 +42,8 @@ struct ContentView: View {
 					}
 				}
 				.onTapGesture {
+					// start location tracking
+					self.locationFetcher.start()
 					// select an image
 					self.showingImagePicker = true
 				}
@@ -51,7 +59,10 @@ struct ContentView: View {
 						
 						// save the data
 						let contactSaver = ContactSaver()
-						contactSaver.saveContact(image: inputImage!, firstName: firstName, lastName: lastName)
+						let location = locationFetcher.lastKnownLocation
+						let latitude = location?.latitude ?? 0.0
+						let longitude = location?.longitude ?? 0.0
+						contactSaver.saveContact(image: inputImage!, firstName: firstName, lastName: lastName, latitude: latitude, longitude: longitude)
 					}
 				}
 			}

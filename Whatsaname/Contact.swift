@@ -6,12 +6,15 @@
 //
 
 import Foundation
+import CoreLocation
 
 struct Contact: Identifiable, Comparable, Codable {
 	
 	let id: UUID
 	let firstName: String
 	let lastName: String
+	let latitude: CLLocationDegrees
+	let longitude: CLLocationDegrees
 	
 	static func < (lhs: Contact, rhs: Contact) -> Bool {
 		lhs.lastName < rhs.lastName

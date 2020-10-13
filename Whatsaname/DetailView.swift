@@ -23,6 +23,7 @@ struct DetailView: View {
 				.resizable()
 				.scaledToFit()
 			Text("\(contact.firstName) \(contact.lastName)")
+			Text("Location: \(contact.latitude)/\(contact.longitude)")
 		}
 		.padding()
 	}
