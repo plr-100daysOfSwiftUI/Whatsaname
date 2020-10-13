@@ -53,6 +53,8 @@
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Your location will be used to enhance your understanding of this contact.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>We need to use the camera to photograph your new contact</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
