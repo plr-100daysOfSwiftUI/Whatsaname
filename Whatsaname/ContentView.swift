@@ -42,7 +42,7 @@ struct ContentView: View {
 							.aspectRatio(inputImage!.size, contentMode: .fit)
 						//							.scaledToFit()
 					} else {
-						Text("Tap to select a picture")
+						Text("Tap to make a picture")
 							.foregroundColor(.white)
 							.font(.headline)
 					}
