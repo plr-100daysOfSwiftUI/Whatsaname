@@ -71,6 +71,9 @@ struct ContentView: View {
 						let latitude = location?.latitude ?? 0.0
 						let longitude = location?.longitude ?? 0.0
 						contactSaver.saveContact(image: inputImage!, firstName: firstName, lastName: lastName, latitude: latitude, longitude: longitude, locationName: locationName)
+						
+						// TODO: alert the user and clear the image and text fields
+						
 					}
 				}
 			}
