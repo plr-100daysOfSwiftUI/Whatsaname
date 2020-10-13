@@ -19,6 +19,7 @@ struct ListView: View {
 
 			}
 		}
+		.navigationBarTitle(Text("My Contacts"))
 	}
 	
 }
