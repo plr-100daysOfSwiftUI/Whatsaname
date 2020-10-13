@@ -22,12 +22,12 @@ struct DetailView: View {
 			Image(uiImage: uiImage!)
 				.resizable()
 				.scaledToFit()
-			Text("\(contact.firstName) \(contact.lastName)")
 			NavigationLink(destination: MapView(latitude: contact.latitude, longitude: contact.longitude, locationName: contact.locationName)) {
-				Text("Location")
+				Text("Made contact at \(contact.locationName)")
 			}
 			.padding()
 		}
+		.navigationBarTitle(Text("\(contact.firstName) \(contact.lastName)"))
 		.padding()
 	}
 }
