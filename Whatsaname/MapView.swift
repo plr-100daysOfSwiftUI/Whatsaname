@@ -11,6 +11,10 @@ import CoreLocation
 
 struct MapView: UIViewRepresentable {
 	
+	/*
+	TODO: How do we add a navigation bar title to this view?
+	*/
+	
 	var latitude: CLLocationDegrees
 	var longitude: CLLocationDegrees
 	var locationName: String
