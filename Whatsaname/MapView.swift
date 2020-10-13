@@ -13,6 +13,7 @@ struct MapView: UIViewRepresentable {
 	
 	var latitude: CLLocationDegrees
 	var longitude: CLLocationDegrees
+	var locationName: String
 	
 	var location: CLLocationCoordinate2D {
 		return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
@@ -27,6 +28,7 @@ struct MapView: UIViewRepresentable {
 
 		let annotation = MKPointAnnotation()
 		annotation.coordinate = location
+		annotation.title = locationName
 		mapView.addAnnotation(annotation)
 
 		mapView.delegate = context.coordinator
@@ -54,8 +56,8 @@ struct MapView: UIViewRepresentable {
 		}
 		
 		func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-			let annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: nil)
-			annotationView.canShowCallout = false
+			let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: nil)
+
 			return annotationView
 		}
 		
@@ -65,6 +67,6 @@ struct MapView: UIViewRepresentable {
 
 struct MapView_Previews: PreviewProvider {
 	static var previews: some View {
-		MapView(latitude: 0.0, longitude: 0.0)
+		MapView(latitude: 0.0, longitude: 0.0, locationName: "Test Location")
 	}
 }

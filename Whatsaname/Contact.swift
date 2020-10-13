@@ -15,6 +15,7 @@ struct Contact: Identifiable, Comparable, Codable {
 	let lastName: String
 	let latitude: CLLocationDegrees
 	let longitude: CLLocationDegrees
+	let locationName: String
 	
 	static func < (lhs: Contact, rhs: Contact) -> Bool {
 		lhs.lastName < rhs.lastName

@@ -13,6 +13,7 @@ struct ContentView: View {
 	@State private var image: Image?
 	@State private var firstName: String = ""
 	@State private var lastName: String = ""
+	@State private var locationName: String = ""
 	
 	@State private var showingImagePicker = false
 	@State private var inputImage: UIImage?
@@ -54,19 +55,20 @@ struct ContentView: View {
 				VStack {
 					TextField("First Name", text: $firstName)
 					TextField("Last Name", text: $lastName)
+					TextField("Location", text: $locationName)
 				}
 				HStack {
 					Spacer()
 					Button("Save") {
 						guard let _ = self.image else { return }
-						guard !firstName.isEmpty && !lastName.isEmpty else { return }
+						guard !firstName.isEmpty && !lastName.isEmpty && !locationName.isEmpty else { return }
 						
 						// save the data
 						let contactSaver = ContactSaver()
 						let location = locationFetcher.lastKnownLocation
 						let latitude = location?.latitude ?? 0.0
 						let longitude = location?.longitude ?? 0.0
-						contactSaver.saveContact(image: inputImage!, firstName: firstName, lastName: lastName, latitude: latitude, longitude: longitude)
+						contactSaver.saveContact(image: inputImage!, firstName: firstName, lastName: lastName, latitude: latitude, longitude: longitude, locationName: locationName)
 					}
 				}
 			}

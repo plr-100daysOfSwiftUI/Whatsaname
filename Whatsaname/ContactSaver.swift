@@ -10,12 +10,12 @@ import CoreLocation
 
 class ContactSaver: NSObject {
 	
-	func saveContact(image: UIImage, firstName: String, lastName: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
-		let contact = Contact(id: UUID(), firstName: firstName, lastName: lastName, latitude: latitude, longitude: longitude)
+	func saveContact(image: UIImage, firstName: String, lastName: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees, locationName: String) {
+		let contact = Contact(id: UUID(), firstName: firstName, lastName: lastName, latitude: latitude, longitude: longitude, locationName: locationName)
 		writeToJSON(contact)
 		saveImage(image: image, id: contact.id)
 	}
-	
+		
 	func writeToJSON (_ contact: Contact) {
 		let url = Self.getDocumentsDirectory().appendingPathComponent("contacts.json")
 		

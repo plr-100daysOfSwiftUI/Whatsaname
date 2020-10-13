@@ -25,7 +25,7 @@ struct ListView: View {
 
 struct ListView_Previews: PreviewProvider {
 	static var previews: some View {
-		let contact = Contact(id: UUID(), firstName: "Foo", lastName: "Bar", latitude: 0.0, longitude: 0.0)
+		let contact = Contact(id: UUID(), firstName: "Foo", lastName: "Bar", latitude: 0.0, longitude: 0.0, locationName: "Test Location")
 		let contacts = [contact]
 		ListView(contacts: contacts)
 	}
