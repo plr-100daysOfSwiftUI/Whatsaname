@@ -31,7 +31,7 @@ struct ContentView: View {
 	var body: some View {
 		
 		NavigationView {
-			VStack {
+			VStack(spacing: 20.0) {
 				ZStack {
 					Rectangle()
 						.fill(Color.secondary)
@@ -53,7 +53,7 @@ struct ContentView: View {
 					// select an image
 					self.showingImagePicker = true
 				}
-				VStack {
+				VStack(spacing: 20.0) {
 					TextField("First Name", text: $firstName)
 					TextField("Last Name", text: $lastName)
 					TextField("Location", text: $locationName)
