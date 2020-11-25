@@ -28,6 +28,7 @@ struct ListView: View {
 
 	func delete(at offsets: IndexSet) {
 		contacts.remove(atOffsets: offsets)
+//		TODO: delete contact image
 		ContactSaver.saveContacts(contacts)
 	}
 	

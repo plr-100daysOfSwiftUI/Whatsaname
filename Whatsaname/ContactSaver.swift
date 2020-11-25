@@ -5,6 +5,13 @@
 //  Created by Paul Richardson on 11.10.2020.
 //
 
+/*
+
+TODO: fix code duplication in writeToJSON/saveContacts/decodeContacts
+TODO: bind to contacts in ContentView
+
+*/
+
 import UIKit
 import CoreLocation
 
