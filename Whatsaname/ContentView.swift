@@ -19,6 +19,10 @@ struct ContentView: View {
 	@State private var inputImage: UIImage?
 	
 	@State private var contacts = ContactSaver.decodeContacts()
+	
+	private var saveEnabled: Bool {
+		firstName.count == 0 || lastName.count == 0 || locationName.count == 0 || image == nil
+	}
 		
 	let locationFetcher = LocationFetcher()
 	
@@ -74,6 +78,7 @@ struct ContentView: View {
 						contacts = ContactSaver.decodeContacts()
 						
 					}
+					.disabled(saveEnabled)
 				}
 			}
 			.padding([.horizontal, .bottom])
