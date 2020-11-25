@@ -22,9 +22,7 @@ struct ContentView: View {
 	TODO: the contacts array must be updated after saving
 	*/
 	
-	var contacts: [Contact] {
-		ContactSaver.decodeContacts()
-	}
+	@State private var contacts = ContactSaver.decodeContacts()
 		
 	let locationFetcher = LocationFetcher()
 	
