@@ -12,14 +12,23 @@ struct ListView: View {
 	@Binding var contacts: [Contact]
 	
 	var body: some View {
-		List(contacts.sorted()) { contact in
-			NavigationLink(
-				destination: DetailView(contact: contact, imageUrl: ContactSaver.getDocumentsDirectory().appendingPathComponent("\(contact.id).jpeg"))) {
-				Text("\(contact.lastName), \(contact.firstName)")
-
+		List {
+			ForEach(contacts.sorted()) { contact in
+				NavigationLink(
+					destination: DetailView(contact: contact, imageUrl: ContactSaver.getDocumentsDirectory().appendingPathComponent("\(contact.id).jpeg"))) {
+					Text("\(contact.lastName), \(contact.firstName)")
+					
+				}
 			}
+			.onDelete(perform: delete)
 		}
 		.navigationBarTitle(Text("My Contacts"))
+		.navigationBarItems(trailing: EditButton())
+	}
+
+	func delete(at offsets: IndexSet) {
+		contacts.remove(atOffsets: offsets)
+		ContactSaver.saveContacts(contacts)
 	}
 	
 }
