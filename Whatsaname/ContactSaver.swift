@@ -51,6 +51,15 @@ class ContactSaver: NSObject {
 		
 	}
 	
+	static func saveContacts(_ contacts: [Contact]) {
+		let url = self.getDocumentsDirectory().appendingPathComponent("contacts.json")
+
+		if let encoded = try? JSONEncoder().encode(contacts) {
+			try? encoded.write(to: url, options: [.atomic])
+		}
+		
+	}
+	
 	static func decodeContacts() -> [Contact] {
 		let url = self.getDocumentsDirectory().appendingPathComponent("contacts.json")
 		
