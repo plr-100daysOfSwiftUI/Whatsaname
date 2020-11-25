@@ -52,6 +52,7 @@ struct ContentView: View {
 						// save the data
 						let contactSaver = ContactSaver()
 						contactSaver.saveContact(image: inputImage!, firstName: firstName, lastName: lastName)
+						contacts = ContactSaver.decodeContacts()
 					}
 				}
 			}
