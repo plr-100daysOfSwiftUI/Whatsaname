@@ -78,7 +78,7 @@ struct ContentView: View {
 			.padding([.horizontal, .bottom])
 			.navigationBarTitle("Whatsaname")
 			.navigationBarItems(trailing: NavigationLink(
-														destination: ListView(contacts: contacts),
+														destination: ListView(contacts: $contacts),
 														label: {
 															Image(systemName: "list.dash")
 														})
