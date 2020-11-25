@@ -18,10 +18,6 @@ struct ContentView: View {
 	@State private var showingImagePicker = false
 	@State private var inputImage: UIImage?
 	
-	/*
-	TODO: the contacts array must be updated after saving
-	*/
-	
 	@State private var contacts = ContactSaver.decodeContacts()
 		
 	let locationFetcher = LocationFetcher()
@@ -75,6 +71,7 @@ struct ContentView: View {
 						locationName = ""
 						image = nil
 						
+						contacts = ContactSaver.decodeContacts()
 						
 					}
 				}
